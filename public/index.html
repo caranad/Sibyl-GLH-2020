@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Negotiation Buddy</title>
+        <link rel="stylesheet" href="css/index.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+        <script src = "js/index.js" defer></script>
+    </head>
+    <body>
+        <div id="app">
+            <div id="listener">
+                <div v-if="processing">
+                    <img class="icon" src="./img/Wedges-3s-100px.gif">
+                    <div class="caption">Processing...</div>
+                </div>
+                <div v-else>
+                    <img class="icon clickable" @click="begin" :style="{ backgroundColor: (listening ? 'green' : 'red')}" src="./img/mic-black-18dp.svg"/>
+                    <div class="caption" v-if="!started">Click to Begin</div>
+                    <div class="caption" v-else-if="!listening">Paused</div>
+                    <div class="caption" v-else>Listening...</div>
+                </div>
+            </div>
+            <div class="logcontainer" v-if="noteContent.length">
+                <div class="log full_width">
+                    <h3>Log</h3>
+                    <div v-for="note in noteContent" v-html="note">
+                    </div>
+                </div>
+            </div>
+            <res-table :list="list" v-else></res-table>
+        </div>
+
+        <script type="text/x-template" id="rating-template">
+            <img class="small-icon rating-worst" v-if="rating < 0.25" src="./img/sentiment_very_dissatisfied-black-18dp.svg"/>
+            <img class="small-icon rating-worse" v-else-if="rating < 0.5" src="./img/sentiment_dissatisfied-black-18dp.svg"/>
+            <img class="small-icon rating-better" v-else-if="rating < 0.75" src="./img/sentiment_satisfied-black-18dp.svg"/>
+            <img class="small-icon rating-best" v-else src="./img/sentiment_very_satisfied-black-18dp.svg"/>
+        </script>
+        
+        <script type="text/x-template" id="news-template">
+            <div>
+                <h3>{{heading}}</h3>
+                <div v-for="(item, index) in list">
+                    <div>
+                        <img v-if="item.urlToImage" :src="item.urlToImage" width="50px" height="50px" align="left"/> <a :href="item.url" target="_blank">{{item.title}}</a>
+                    </div>
+                    <div v-html="item.description"></div>
+                    <div><b>Author</b>: {{item.author}}</div>
+                    <div><b>Source</b>: {{item.source.name}}</div>
+                    <div><b>Published</b>: {{item.publishedAt}}</div>
+                    <hr v-if="index < list.length-1"/>
+                </div>
+            </div>
+        </script>
+
+        <script type="text/x-template" id="suggestions-template">
+            <div>
+                <h3>Legal Clauses For You to Consider Including</h3>
+                <div v-for="(suggestion, index) in data" class="left-aligned-text">
+                    <div v-html="suggestion.text"></div> 
+                    <div class="caption red-text bold-text">Reason: {{suggestion.reason}}</div> 
+                    <!--<rating :rating="suggestion.value"></rating>-->
+                    <hr v-if="index < data.length-1"/>
+                </div>
+            </div>
+        </script>
+
+        <script type="text/x-template" id="covid-template">
+            <div>
+                <h3>Checking Covid-19 Cases</h3>
+                <div class="record">
+                    <span>The number of confirmed cases in <b>{{ data.region}}</b> is <b>{{data.confirmed}}</b>.</span>
+                    <rating :rating="severityToRating(data.severity)"></rating>
+                </div>
+                <iframe :src="data.embed" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+        </script>
+
+        <script type="text/x-template" id="product-template">
+            <div>
+                <h3>Checking Stock</h3>
+                <div class="record">
+                    <span>The product <b>{{data.title}}</b> from the Amazon website is <b>{{data.inStock}}</b></span>
+                    <rating :rating="stockToRating(data.inStock)"></rating>
+                </div>
+            </div>
+        </script>
+
+        <script type="text/x-template" id="covidnews-template">
+            <news heading="Covid-19 News" :list="data"></news>
+        </script>
+
+        <script type="text/x-template" id="airlinenews-template">
+            <news heading="Airline News" :list="data"></news>
+        </script>
+
+        <script type="text/x-template" id="whonews-template">
+            <news heading="WHO News" :list="data"></news>
+        </script>
+
+        <script type="text/x-template" id="res-table-template">
+            <div class="logcontainer">
+                <div v-for="(column, index1) in columns" :key="index1" class="logcolumn">
+                    <div class="log" v-for="(element, index2) in column" :key="index2" :is="element.name" :data="element.data"></div>
+                </div>
+            </div>
+        </script>
+
+        <!--
+        <div class="log" v-if="data.speech_intentions">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Message</th>
+                        <th>Key</th>
+                        <th>Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="intention in data.speech_intentions">
+                        <td>{{intention.input}}</td>
+                        <td>{{intention.label}}</td>
+                        <td><rating :rating="intention.value"></rating></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        -->
+    </body>
+</html>

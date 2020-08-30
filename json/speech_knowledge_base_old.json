@@ -1,0 +1,118 @@
+[
+    {
+        "input": "to new york city",
+        "output": "working new york city"
+    },
+    {
+        "input": "based in new york city",
+        "output": "working new york city"
+    },
+    {
+        "input": "located in new york city",
+        "output": "working new york city"
+    },
+    {
+        "input": "coming to new york city",
+        "output": "working new york city"
+    },
+    {
+        "input": "centered in new york city",
+        "output": "working new york city"
+    },
+    {
+        "input": "within new york city",
+        "output": "working new york city"
+    },
+
+
+
+
+
+    {
+        "input": "from houston county",
+        "output": "fly houston county"
+    },
+    {
+        "input": "based in houston county",
+        "output": "fly houston county"
+    },
+    {
+        "input": "located in houston county",
+        "output": "fly houston county"
+    },
+    {
+        "input": "originated in houston county",
+        "output": "fly houston county"
+    },
+    {
+        "input": "coming from houston county",
+        "output": "fly houston county"
+    },
+
+
+
+
+
+
+
+    {
+        "input": "want HP servers from amazon",
+        "output": "HP servers amazon"
+    },
+    {
+        "input": "buy HP servers from amazon",
+        "output": "HP servers amazon"
+    },
+    {
+        "input": "purchase HP servers from amazon",
+        "output": "HP servers amazon"
+    },
+    {
+        "input": "obtain HP servers from amazon",
+        "output": "HP servers amazon"
+    },
+    {
+        "input": "acquire HP servers from amazon",
+        "output": "HP servers amazon"
+    },
+    {
+        "input": "take HP servers from amazon",
+        "output": "HP servers amazon"
+    },
+    {
+        "input": "get HP servers from amazon",
+        "output": "HP servers amazon"
+    },
+
+
+
+
+    {
+        "input": "want Lenovo servers from amazon",
+        "output": "Lenovo servers amazon"
+    },
+    {
+        "input": "want to buy Lenovo servers from amazon",
+        "output": "Lenovo servers amazon"
+    },
+    {
+        "input": "want to purchase Lenovo servers from amazon",
+        "output": "Lenovo servers amazon"
+    },
+    {
+        "input": "want to obtain Lenovo servers from amazon",
+        "output": "Lenovo servers amazon"
+    },
+    {
+        "input": "want to acquire Lenovo servers from amazon",
+        "output": "Lenovo servers amazon"
+    },
+    {
+        "input": "want to take Lenovo servers from amazon",
+        "output": "Lenovo servers amazon"
+    },
+    {
+        "input": "want to get Lenovo servers from amazon",
+        "output": "Lenovo servers amazon"
+    }
+]

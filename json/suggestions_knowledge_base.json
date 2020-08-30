@@ -1,0 +1,20 @@
+[
+    {
+        "comments": "Trigger: Show only if Amazon out of stock",
+        "input": ["Currently unavailable."],
+        "text" : "<b>Legal Clause (Timing of Delivery)</b>: In the event of COVID-19 Circumstances that affect the availability of third party software or hardware inventory required to deliver the Services, for each day that such software or hardware inventory is delayed, Supplier will be entitled to an additional day to deliver the Services.",
+        "reason": "If COVID-19 affects our software or hardware supply chain, we will need some extra days in order to deliver what we had committed to."
+    },
+    {
+        "comments": "Trigger: Show if hot zone involved (i.e. hot zone origin, hot zone destination)",
+        "input": ["HIGH", "MODERATE"],
+        "text" : "<b>Legal Clause (Availability Personnel)</b>: In the event of COVID-19 Circumstances that affect the availability of Supplier's personnel, Supplier may subcontract any Services currently performed by such personnel to a third party that have entered into agreements with Supplier no less protective than the provisions of this Agreement until such Supplier personnel becomes available.",
+        "reason": "If our key personnel catch COVID-19, in these extraordinary circumstnaces, we will need some relief from standards prohibitions that restrict subcontracting."
+    },
+    {
+        "comments": "Trigger: Always",
+        "input": ["Currently unavailable.", "In Stock.", "LOW", "MODERATE", "HIGH"],
+        "text" : "<b>Legal Clause (Force Majeure)</b>: Neither party will be liabel for any failure to perform its obligations under this Agreement to the extent caused by any act beyond its reasonable control, including any act of God, war, terrorism, riot, pandemic, epidemic or act of government authority (\"Force Majeure\" and such Force Majeure Event relating to COVID-19, \"Covid-19 Circumstances\").",
+        "reason": "We want to specifically call out pandemic, epidemic and act of government authority that may impact our abvility to deliver under COVID-19 conditions"
+    }
+]

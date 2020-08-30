@@ -1,0 +1,45 @@
+User Flow
+
+Key Article: https://www.osler.com/en/resources/regulations/2020/working-together-while-working-from-home-key-considerations-for-technology-and-other-commercial-ser
+
+Problem: Excerpted from Article - " Negotiating in the current circumstances, however, presents challenges and unique issues that should not be overlooked, and that may well not be adequately addressed by an organization’s standard provisions or risk management framework. This is further compounded by the constant change that we are experiencing in many aspects of the business environment which, in large part, is outside of both the customer’s and the supplier’s control. Though we all anticipate an eventual return to business as usual (or perhaps a modified version of the pre-pandemic universe), exactly when this will occur, and what the transition back will look like, are currently unknown. While long-term technology or other services agreements typically include mechanisms to address change over the life of the relationship, it is unlikely that these mechanisms will be sufficient to fully address the unique situations that face businesses right now."
+
+Predictive Problem:
+- Customers and suppliers may have service locations in jurisdictions that remain under lockdown.
+- Governmental restrictions will be relaxed in different locations in different ways and at different times.
+- It will take time for international travel and other related services to recommence, and flight schedules and flight frequencies may take time to scale.
+- Employees may be reluctant to travel to other jurisdictions, particularly if they fear that disease flare-ups could once again inhibit movement and their ability to return home.
+
+
+1. Voice -> Just Ingestion
+
+2. Script:
+
+User: I'm negotiating a services contract to build and operate a data center.
+"Delivery"
+
+Negotiating Buddy: 
+
+2.  Display Screen:
+
+- Latest NEWS and Government
+- Location of Customer and suppliers
+- Flights and International Travel Delays
+- presents
+
+APIS:
+https://covid-19-apis.postman.com/
+- WHO
+- Government
+- Travel Airlight and Flights
+
+Suggested Legal Clause:
+
+Service Level:
+
+
+
+
+Subcontracting:
+
+Force Majeure:

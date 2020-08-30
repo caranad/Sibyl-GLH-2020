@@ -1,0 +1,84 @@
+[
+    {
+        "input": "Hello Sibyl.",
+        "speech": "Hello, how can I help you?",
+        "output": "start",
+        "state": 0,
+        "next_state": 1
+    },
+    {
+        "input": "I'm negotiating a contract to build server farms for Big Bank.",
+        "speech": "I understand, what's your concern?",
+        "state": 1,
+        "next_state": 2
+    },
+    {
+        "input": "I'm concerned I can’t deliver given the COVID-19 situation.",
+        "speech": "I am with you all the way. Since you are concerned with delivery in contract, may I ask you some quick questions?",
+        "state": 2,
+        "next_state": 3
+    },
+    {
+        "input": "Yes, you may ask me questions.",
+        "speech": "Does your services involve a lot of inventory?",
+        "state": 3,
+        "next_state": 4
+    },
+
+    
+    {
+        "input": "Yes, we would order HP servers from Amazon.",
+        "speech": "Perfect. Where are your personnel doing the work located?",
+        "output": "HP servers amazon",
+        "state": 4,
+        "next_state": 5
+    },
+    {
+        "input": "Yes, we would order Lenovo servers from Amazon.",
+        "speech": "Perfect. Where are your personnel doing the work located?",
+        "output": "Lenovo servers amazon",
+        "state": 4,
+        "next_state": 5
+    },
+
+
+    {
+        "input": "My personnel will work from New York City.",
+        "speech": "Amazing. Will they need to travel to do the work on-site, and if so, where?",
+        "output": "working new york city",
+        "state": 5,
+        "next_state": 6
+    },
+    {
+        "input": "My personnel will work from Bennington County.",
+        "speech": "Amazing. Will they need to travel to do the work on-site, and if so, where?",
+        "output": "working bennington county",
+        "state": 5,
+        "next_state": 6
+    },
+
+
+    {
+        "input": "Yes, they will need to fly from Houston County.",
+        "speech": "Great. Is there anything else you would like me to know?",
+        "output": "fly houston county",
+        "state": 6,
+        "next_state": 7
+    },
+    {
+        "input": "Yes, they will need to fly from Missoula County.",
+        "speech": "Great. Is there anything else you would like me to know?",
+        "output": "fly missoula county",
+        "state": 6,
+        "next_state": 7
+    },
+
+    
+    {
+        "input": "No, that will be it.",
+        "speech": "Awesome. Let me analyze the COVID-19 situation. I may have some suggestions for your contract.",
+        "output": "end",
+        "state": 7,
+        "next_state": 0
+    }
+]
